@@ -7,7 +7,7 @@
 
 <h1 align="center">Cortado</h1>
 
-<p align="center"><b>A theme for <a href="https://getbb.app">bb</a> in neutral graphite with warm orange and amber, in light and dark.</b><br>Three palettes, matching code themes, and a contrast check that runs on every change.</p>
+<p align="center"><b>A theme for <a href="https://getbb.app">bb</a> in neutral graphite with warm orange and amber, in light and dark.</b><br>Three palettes, matching code themes, and a contrast check you can run with <code>npm run check</code>.</p>
 
 <p align="center">
 <a href="https://github.com/vburojevic/bb-plugin-cortado/releases/latest"><img src="https://img.shields.io/github/v/release/vburojevic/bb-plugin-cortado?style=flat-square&color=b8640a&label=release" alt="Latest release"></a>
@@ -64,7 +64,7 @@ bb theme set plugin:cortado:cortado-light   # always light
 
 ### Diffs and file previews
 
-bb draws diffs, file previews and the file editor with a code theme of its own. Cortado brings a matching one for each mode, so code reads the same in chat, in the diff and in the file.
+bb draws diffs, file previews and the file editor with a code theme of its own. Cortado brings a matching one for each mode, drawn from the same palette as code in chat.
 
 </td>
 <td width="50%" valign="top">
@@ -130,7 +130,7 @@ The grays carry no tint, so the warm colors do the work. The accent is amber and
   <img src="assets/code-light.svg" width="100%" alt="A TypeScript snippet in Cortado's code colors: orange keywords, gold function names, teal types, green strings and violet numbers.">
 </picture>
 
-Code keeps its warmth in two places, orange keywords and gold function names. Types, strings and numbers are teal, green and violet, so they never compete with the accent. Every color with a hue was tuned in OKLCH to sit in one band of lightness and saturation per mode.
+Code keeps its warmth in two places, orange keywords and gold function names. Types, strings and numbers are teal, green and violet in diffs and file previews (in chat, numbers take the type color), so they never compete with the accent. Every color with a hue was tuned in OKLCH to sit in one band of lightness and saturation per mode.
 
 ## Contrast
 
@@ -178,7 +178,8 @@ The stylesheet sets bb's own theme tokens and nothing else. It never targets bb'
 | Selected cards, your own chips, quote bars | `--surface-selected-border` | `#85858a` | `#6b6b70` |
 | Body text | `--ink` | `#e2e2e0` | `#1b1b1d` |
 | Secondary text | `--muted-foreground` | `#9b9b9b` | `#56565b` |
-| Accent, focus, primary buttons | `--primary` | `#ffb334` | `#a86200` |
+| Accent, primary buttons | `--primary` | `#ffb334` | `#a86200` |
+| Focus rings | `--ring` | `#ffb334` | `#b87400` |
 | Warnings | `--warning` | `#ff9b50` | `#bf4712` |
 | Errors | `--destructive-text` | `#fd7a86` | `#be2e4d` |
 | Success, added lines | `--success` | `#71db9a` | `#107b49` |
@@ -190,15 +191,15 @@ The stylesheet sets bb's own theme tokens and nothing else. It never targets bb'
 <summary><b>Syntax colors in chat</b></summary>
 <br>
 
-bb highlights code blocks in chat with [sugar-high](https://github.com/huozhi/sugar-high), which reads its colors from `--sh-*` properties. Diffs and file previews use the code theme files instead, with the same colors.
+bb highlights code blocks in chat with [sugar-high](https://github.com/huozhi/sugar-high), which reads its colors from `--sh-*` properties. Diffs and file previews use the code theme files instead, which set numbers in violet.
 
 | Property | Colors | Dark | Light |
 | :-- | :-- | :-- | :-- |
 | `--sh-keyword` | Keywords: `export`, `const`, `return` | `#fd9260` | `#b84703` |
 | `--sh-entity` | Function names | `#f0cb6e` | `#8b6500` |
-| `--sh-class` | Types and class names | `#55dcc8` | `#0c796e` |
+| `--sh-class` | Types, class names and numbers | `#55dcc8` | `#0c796e` |
 | `--sh-string` | Strings | `#a6d77d` | `#487817` |
-| `--sh-jsxliterals` | Numbers and JSX literals | `#b0b2fd` | `#5951c1` |
+| `--sh-jsxliterals` | Text inside JSX | `#b0b2fd` | `#5951c1` |
 | `--sh-property` | Properties | `#b9c6d9` | `#4b5563` |
 | `--sh-comment` | Comments | `#737373` | `#717176` |
 
@@ -246,7 +247,7 @@ Edit `themes/cortado.css` for the app and `themes/cortado-code.json` or `themes/
 ```sh
 npm run build    # regenerate Cortado Dark and Cortado Light from cortado.css
 npm run check    # contrast in both modes, and stale files
-npm run images   # redraw the logo, banner, palette and code images
+npm run images   # redraw the logo, palette and code images
 bb theme set plugin:cortado:cortado
 ```
 
@@ -261,7 +262,7 @@ scripts/check-contrast.mjs     the contrast check behind npm run check
 scripts/render-images.mjs      draws the README art from the theme
 docs/overview.md               the bb marketplace description
 server.ts                      the empty server entry bb requires
-assets/                        logo, banner and README images
+assets/                        logo, glyph and README images
 ```
 
 </details>
@@ -270,9 +271,9 @@ assets/                        logo, banner and README images
 <summary><b>About the images</b></summary>
 <br>
 
-The screenshots are captured from bb itself, running headless with its own empty data folder and this plugin installed from the `v1.0.0` tag. The threads show an invented change to a sample file. Nothing comes from anyone's real bb.
+The screenshots are captured from bb itself, running headless with its own empty data folder and Cortado 1.0.0 installed. The threads show an invented change to a sample file. Nothing comes from anyone's real bb.
 
-The logo, banner, palette and code images are drawn by `npm run images`, which reads every color from `themes/cortado.css` and the code theme files. Regenerating after a palette change keeps them honest.
+The logo, palette and code images are drawn by `npm run images`, which reads every color from `themes/cortado.css` and the code theme files. Regenerating after a palette change keeps them honest.
 
 </details>
 

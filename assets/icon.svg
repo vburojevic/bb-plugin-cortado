@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="10" cy="12" r="4.5" fill="currentColor"/><path d="M14.5 12h4"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <defs><clipPath id="cup"><circle cx="10" cy="12" r="5.2"/></clipPath></defs>
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M15.3 12h3.2"/>
+  <circle cx="10" cy="12" r="5.2" stroke-width="1.6"/>
+  <path clip-path="url(#cup)" fill="currentColor" stroke="none" d="M4 13.6 C 6.2 10.2 8.4 15.6 10.6 12.2 C 12 10.2 14 10.6 16 11.4 V 18 H 4 Z"/>
+</svg>

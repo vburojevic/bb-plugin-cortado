@@ -1,5 +1,5 @@
 // Renders the README images from the theme itself: the logo (dark and light),
-// the banner, the palette card and the code card, each in a dark and a light
+// the palette card and the code card, each in a dark and a light
 // version. Every color is read from themes/cortado.css and the code themes, so
 // the images can't drift from what the plugin ships. Run `npm run images`.
 import fs from "node:fs";
@@ -50,7 +50,7 @@ function spiral(phase, turns, r0, r1) {
 }
 const arc = (r, a0, a1) => { const p = (a) => [r * Math.cos((a * Math.PI) / 180), r * Math.sin((a * Math.PI) / 180)].map((v) => v.toFixed(1)).join(" "); return `M${p(a0)}A${r} ${r} 0 0 1 ${p(a1)}`; };
 
-// The mark: a cortado seen from above. Amber crema with a dot of steamed milk: dark and light in one cup.
+// The mark: a cortado seen from above, split by one curve into crema and steamed milk: dark and light in one cup.
 function cup(id, mode, { animate = false } = {}) {
   const L = mode === "light";
   const saucer = L ? ["#ffffff", "#ececee"] : ["#18181b", "#0e0e10"], saucerLine = L ? "#d9d9dc" : "#2c2c2f";
@@ -88,8 +88,6 @@ function cup(id, mode, { animate = false } = {}) {
 }
 const WAVE_LINE = "M-130 18 C -70 -62 -20 78 40 6 C 70 -30 100 -26 130 -14";
 const WAVE_FILL = WAVE_LINE + " L 130 -140 L -130 -140 Z";
-const HEART = "M0 30 C -16 18 -40 2 -40 -17 C -40 -32 -28 -41 -16 -41 C -8 -41 -2 -36 0 -29 C 2 -36 8 -41 16 -41 C 28 -41 40 -32 40 -17 C 40 2 16 18 0 30 Z";
-const motion = `<style>.swirl{transform-origin:0 0;animation:swirl 60s linear infinite}@keyframes swirl{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){.swirl{animation:none}}</style>`;
 
 for (const mode of ["dark", "light"]) {
   const M = MODE[mode], L = mode === "light", sfx = L ? "-light" : "";
@@ -102,30 +100,6 @@ for (const mode of ["dark", "light"]) {
   <g transform="translate(250 252) scale(.98)">${cup("i", mode)}</g>
 </svg>`);
 
-  // banner: a bb window in miniature, in this mode's colors
-  {
-    const W = 1280, H = 440, SB = 420;
-    const word = text(inter600, "Cortado", SB + 84, 236, 132, { track: -0.035, fill: M.ink });
-    const line = text(inter500, "Graphite and orange, in light and dark. A theme for bb.", SB + 90, 300, 28, { track: -0.01, fill: M.sec });
-    const dots = [M.primary, M.warn, M.ok, M.err, M.file, M.merged].map((c, i) => `<circle cx="${SB + 104 + i * 34}" cy="356" r="9" fill="${c}"/>`).join("");
-    const shadow = L ? `<filter id="drop" x="-10%" y="-10%" width="120%" height="140%" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".10"/></filter>` : "";
-    fs.writeFileSync(`${OUT}/banner${sfx}.svg`, `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W + 48} ${H + 56}" width="${W + 48}" height="${H + 56}">
-  ${motion}
-  <defs><clipPath id="win"><rect width="${W}" height="${H}" rx="22"/></clipPath>${shadow}</defs>
-  <g transform="translate(24 16)">
-  <rect width="${W}" height="${H}" rx="22" fill="${M.canvas}" ${L ? 'filter="url(#drop)"' : ""}/>
-  <g clip-path="url(#win)">
-    <rect width="${SB}" height="${H}" fill="${M.sidebar}"/>
-    <rect x="${SB}" width="1" height="${H}" fill="${M.seam}"/>
-    <g fill="${M.ink}" opacity=".22">${[0, 1, 2].map((i) => `<circle cx="${30 + i * 20}" cy="30" r="5.5"/>`).join("")}</g>
-    <g transform="translate(${SB / 2} ${H / 2 + 6}) scale(.84)">${cup("b", mode, { animate: true })}</g>
-    ${word.svg}${line.svg}${dots}
-  </g>
-  <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="21.5" fill="none" stroke="${L ? M.border : M.seam}"/>
-  </g>
-</svg>`);
-  }
-
   // palette
   {
     const W = 1280, H = 820, tw = 150, gap = 14;
@@ -133,9 +107,7 @@ for (const mode of ["dark", "light"]) {
     const label = (x, y, n, hex) => text(inter500, n, x, y, 19, { fill: M.ink }).svg + text(fira, hex, x, y + 27, 16, { fill: M.sub }).svg;
     s += text(inter600, "Surfaces and lines", 64, 92, 26, { fill: M.ink, track: -0.01 }).svg;
     s += text(inter500, L ? "The sidebar sits one step grayer than the white chat." : "The sidebar sits one step above the chat, as macOS raises it.", 64, 124, 18, { fill: M.sec }).svg;
-    const surf = L
-      ? [["Chat", M.canvas], ["Sidebar, code", M.sidebar], ["Menus", M.popover], ["Buttons", M.secondary], ["Hover", M.accentFill], ["Lines", M.border], ["Selected outline", M.selected]]
-      : [["Chat", M.canvas], ["Sidebar, code", M.sidebar], ["Menus", M.popover], ["Buttons", M.secondary], ["Hover", M.accentFill], ["Lines", M.border], ["Selected outline", M.selected]];
+    const surf = [["Chat", M.canvas], ["Sidebar, code", M.sidebar], ["Menus", M.popover], ["Buttons", M.secondary], ["Hover", M.accentFill], ["Lines", M.border], ["Selected outline", M.selected]];
     const base = 340;
     surf.forEach(([n, c], i) => {
       const x = 64 + i * (tw + gap), h = 110 + i * 14;
@@ -194,4 +166,4 @@ for (const mode of ["dark", "light"]) {
 </svg>`);
   }
 }
-console.log("wrote assets/logo, banner, palette and code images, dark and light");
+console.log("wrote assets/logo, palette and code images, dark and light");
