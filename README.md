@@ -1,24 +1,30 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
-    <img src="assets/logo-light.svg" width="112" alt="The Cortado logo: a cup and handle seen from above, its surface split by one S-curve into amber crema and steamed milk.">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg">
+    <img src="assets/wordmark-light.svg" width="380" alt="Cortado">
   </picture>
 </p>
 
-<h1 align="center">Cortado</h1>
-
-<p align="center"><b>A theme for <a href="https://getbb.app">bb</a> in neutral graphite with warm orange and amber, in light and dark.</b><br>Three palettes, matching code themes, and a contrast check you can run with <code>npm run check</code>.</p>
+<p align="center"><b>Graphite and amber for <a href="https://getbb.app">bb</a>, in light and dark.</b></p>
 
 <p align="center">
-<a href="https://github.com/vburojevic/bb-plugin-cortado/releases/latest"><img src="https://img.shields.io/github/v/release/vburojevic/bb-plugin-cortado?style=flat-square&color=b8640a&label=release" alt="Latest release"></a>
-<img src="https://img.shields.io/badge/bb-%E2%89%A50.48-57606a?style=flat-square" alt="Requires bb 0.48 or later">
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-57606a?style=flat-square" alt="MIT license"></a>
-<img src="https://img.shields.io/badge/contrast-52%2F52%20pass-107b49?style=flat-square" alt="All 52 contrast checks pass">
+<a href="https://github.com/vburojevic/bb-plugin-cortado/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/v/release/vburojevic/bb-plugin-cortado?style=flat-square&label=release&color=ffb334&labelColor=1c1c1e"><img src="https://img.shields.io/github/v/release/vburojevic/bb-plugin-cortado?style=flat-square&label=release&color=a86200&labelColor=e8e8ea" alt="Latest release"></picture></a>
+<a href="https://getbb.app"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/bb-%E2%89%A50.48-ffb334?style=flat-square&labelColor=1c1c1e"><img src="https://img.shields.io/badge/bb-%E2%89%A50.48-a86200?style=flat-square&labelColor=e8e8ea" alt="Requires bb 0.48 or later"></picture></a>
+<a href="LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/license-MIT-ffb334?style=flat-square&labelColor=1c1c1e"><img src="https://img.shields.io/badge/license-MIT-a86200?style=flat-square&labelColor=e8e8ea" alt="MIT license"></picture></a>
+<a href="#contrast"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/contrast-52%2F52%20pass-ffb334?style=flat-square&labelColor=1c1c1e"><img src="https://img.shields.io/badge/contrast-52%2F52%20pass-a86200?style=flat-square&labelColor=e8e8ea" alt="All 52 contrast checks pass"></picture></a>
+<a href="#three-palettes"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/palettes-3-ffb334?style=flat-square&labelColor=1c1c1e"><img src="https://img.shields.io/badge/palettes-3-a86200?style=flat-square&labelColor=e8e8ea" alt="Three palettes"></picture></a>
 </p>
 
-<img src="assets/screens/hero-split.png" width="100%" alt="A bb thread in Cortado, split along a diagonal: Cortado Dark on the left, Cortado Light on the right, with a thin amber seam between them. The chat holds a reply with a table and a TypeScript block; src/greet.ts is open in the file preview.">
+<a href="assets/full/hero.png?raw=true"><img src="assets/screens/hero.png" width="100%" alt="One bb thread in Cortado, split along a diagonal: Cortado Dark on the left, Cortado Light on the right, with a thin amber seam. The chat shows a reply with a list, a table and a TypeScript block."></a>
 
-<p align="center"><sub>One bb window, dark on the left and light on the right.</sub></p>
+<p align="center"><sub>One bb window, Cortado Dark on the left and Cortado Light on the right. <a href="assets/full/hero.png?raw=true">Open full size</a></sub></p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg">
+    <img src="assets/divider-light.svg" width="100%" alt="">
+  </picture>
+</p>
 
 ## Install
 
@@ -33,15 +39,33 @@ bb plugin install git:github.com/vburojevic/bb-plugin-cortado@v1.0.0 --yes
 > bb theme set plugin:cortado:cortado
 > ```
 
-> [!IMPORTANT]
-> Code renders in [Fira Code](https://github.com/tonsky/FiraCode) and the terminal in [FiraCode Nerd Font Mono](https://www.nerdfonts.com/font-downloads). Install both first, or bb falls back to your system's monospace font.
+<sub>Code renders in <a href="https://github.com/tonsky/FiraCode">Fira Code</a> and the terminal in <a href="https://www.nerdfonts.com/font-downloads">FiraCode Nerd Font Mono</a>. Install both, or bb falls back to your system's monospace font.</sub>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg">
+    <img src="assets/divider-light.svg" width="100%" alt="">
+  </picture>
+</p>
 
 ## Three palettes
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/screens/palettes-trio-dark.png">
-  <img src="assets/screens/palettes-trio-light.png" width="100%" alt="Three thumbnails of the same bb thread. Cortado, split between dark and light, follows bb's mode. Cortado Dark keeps the dark palette. Cortado Light keeps the light palette. Each carries its bb theme set id.">
-</picture>
+<table>
+<tr>
+<td width="33%" align="center" valign="top">
+<a href="assets/full/hero.png?raw=true"><img src="assets/card-cortado.svg" width="100%" alt="Cortado: the palette's name, a code sample and its swatches."></a>
+<br><code>cortado</code>
+</td>
+<td width="33%" align="center" valign="top">
+<a href="assets/full/thread-dark.png?raw=true"><img src="assets/card-dark.svg" width="100%" alt="Cortado Dark: the palette's name, a code sample and its swatches."></a>
+<br><code>cortado-dark</code>
+</td>
+<td width="33%" align="center" valign="top">
+<a href="assets/full/thread-light.png?raw=true"><img src="assets/card-light.svg" width="100%" alt="Cortado Light: the palette's name, a code sample and its swatches."></a>
+<br><code>cortado-light</code>
+</td>
+</tr>
+</table>
 
 **Cortado** follows bb's Light, Dark or System setting. **Cortado Dark** and **Cortado Light** keep one palette whichever way that switch is set. Each recolors the app, the syntax colors in chat, diffs and file previews, and the 16 terminal colors.
 
@@ -51,118 +75,150 @@ bb theme set plugin:cortado:cortado-dark    # always dark
 bb theme set plugin:cortado:cortado-light   # always light
 ```
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg">
+    <img src="assets/divider-light.svg" width="100%" alt="">
+  </picture>
+</p>
+
 ## A closer look
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/screens/diff-dark.png">
-  <img src="assets/screens/diff-light.png" width="100%" alt="bb's diff panel: README.md with one line changed and src/greet.ts with five added lines, in Cortado's code colors.">
-</picture>
 
 ### Diffs and file previews
 
-bb draws diffs, file previews and the file editor with a code theme of its own. Cortado brings a matching one for each mode, drawn from the same palette as code in chat.
+bb draws diffs, file previews and the file editor with a code theme of its own. Cortado brings one for each mode, drawn from the same palette as code in chat.
 
-</td>
-<td width="50%" valign="top">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/screens/palettes-dark.png">
-  <img src="assets/screens/palettes-light.png" width="100%" alt="bb's Settings, Appearance page, with the Palette menu open on Cortado, Cortado Dark and Cortado Light.">
-</picture>
+<a href="assets/full/diff-dark.png?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/diff-dark.png">
+    <img src="assets/screens/diff-light.png" width="100%" alt="bb's diff panel beside a thread: README.md with one line changed and src/greet.ts with five added lines.">
+  </picture>
+</a>
+<p align="center"><sub>Full size: <a href="assets/full/diff-dark.png?raw=true">dark</a> · <a href="assets/full/diff-light.png?raw=true">light</a></sub></p>
 
 ### Right in Settings
 
 All three palettes appear under **Settings → Appearance → Palette**, next to bb's built-in ones.
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/screens/menu-dark.png">
-  <img src="assets/screens/menu-light.png" width="100%" alt="The navigation menu open over the sidebar.">
-</picture>
-
-### Depth you can read
-
-Menus sit one step above the sidebar, and the sidebar one step above the chat, so every layer separates without heavy borders.
-
-</td>
-<td width="50%" valign="top">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/screens/search-dark.png">
-  <img src="assets/screens/search-light.png" width="100%" alt="Thread search with two results; the matched word is highlighted in amber.">
-</picture>
+<a href="assets/full/palettes-dark.png?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/palettes-dark.png">
+    <img src="assets/screens/palettes-light.png" width="100%" alt="bb's Settings, Appearance page, with the Palette menu open on Cortado, Cortado Dark and Cortado Light.">
+  </picture>
+</a>
+<p align="center"><sub>Full size: <a href="assets/full/palettes-dark.png?raw=true">dark</a> · <a href="assets/full/palettes-light.png?raw=true">light</a></sub></p>
 
 ### Warm where it counts
 
-The amber accent marks what matters: search matches, focus, the unread line and primary buttons.
+The amber accent marks what matters: search matches, the unread line and primary buttons.
 
+<a href="assets/full/search-dark.png?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/search-dark.png">
+    <img src="assets/screens/search-light.png" width="100%" alt="Thread search for greet with three results; the matched word is highlighted in amber.">
+  </picture>
+</a>
+<p align="center"><sub>Full size: <a href="assets/full/search-dark.png?raw=true">dark</a> · <a href="assets/full/search-light.png?raw=true">light</a></sub></p>
+
+### Depth you can read
+
+Menus sit one step above the sidebar and the sidebar one step above the chat, so every layer separates without heavy borders.
+
+<a href="assets/full/menu-dark.png?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/menu-dark.png">
+    <img src="assets/screens/menu-light.png" width="100%" alt="The navigation menu open over the sidebar, beside a thread.">
+  </picture>
+</a>
+<p align="center"><sub>Full size: <a href="assets/full/menu-dark.png?raw=true">dark</a> · <a href="assets/full/menu-light.png?raw=true">light</a></sub></p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg">
+    <img src="assets/divider-light.svg" width="100%" alt="">
+  </picture>
+</p>
+
+## On your phone
+
+bb's phone layout gets the same palette, in both modes. Tap any phone for the full-size screen.
+
+<table>
+<tr>
+<td width="33%" align="center" valign="top">
+<a href="assets/full/thread-phone-dark.png?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/thread-phone-dark.png">
+    <img src="assets/screens/thread-phone-light.png" width="250" alt="A thread on a phone in Cortado.">
+  </picture>
+</a>
+<br><sub><b>A thread</b><br><a href="assets/full/thread-phone-dark.png?raw=true">dark</a> · <a href="assets/full/thread-phone-light.png?raw=true">light</a></sub>
+</td>
+<td width="33%" align="center" valign="top">
+<a href="assets/full/plan-phone-dark.png?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/plan-phone-dark.png">
+    <img src="assets/screens/plan-phone-light.png" width="250" alt="A numbered plan on a phone in Cortado.">
+  </picture>
+</a>
+<br><sub><b>A numbered plan</b><br><a href="assets/full/plan-phone-dark.png?raw=true">dark</a> · <a href="assets/full/plan-phone-light.png?raw=true">light</a></sub>
+</td>
+<td width="33%" align="center" valign="top">
+<a href="assets/full/settings-phone-dark.png?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/settings-phone-dark.png">
+    <img src="assets/screens/settings-phone-light.png" width="250" alt="Settings on a phone in Cortado.">
+  </picture>
+</a>
+<br><sub><b>Settings</b><br><a href="assets/full/settings-phone-dark.png?raw=true">dark</a> · <a href="assets/full/settings-phone-light.png?raw=true">light</a></sub>
 </td>
 </tr>
 </table>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/phone-dark.png">
-    <img src="assets/screens/phone-light.png" width="300" alt="A thread on a phone-sized window: a table, a quote and a code block.">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg">
+    <img src="assets/divider-light.svg" width="100%" alt="">
   </picture>
-  <br><sub>On a phone, tables, quotes and code still separate cleanly.</sub>
 </p>
 
 ## Colors
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/palette.svg">
-  <img src="assets/palette-light.svg" width="100%" alt="Cortado's surfaces, accents and text colors, with their hex values, in the current mode.">
-</picture>
+<a href="assets/palette.svg?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/palette.svg">
+    <img src="assets/palette-light.svg" width="100%" alt="Cortado's surfaces, accents and text colors, with their hex values, in the current mode.">
+  </picture>
+</a>
 
-The grays carry no tint, so the warm colors do the work. The accent is amber and warnings are orange. In dark mode the sidebar, icon rail, side panels and code sit one step above the chat, the way macOS raises its sidebars. In light mode they sit one step grayer than the white chat. Light mode uses a deeper amber, `#a86200`, so the accent still reads as text on white.
+The grays carry no tint, so the warm colors do the work. In dark mode the sidebar and side panels sit one step above the chat; in light mode they sit one step grayer than the white chat.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/code.svg">
-  <img src="assets/code-light.svg" width="100%" alt="A TypeScript snippet in Cortado's code colors: orange keywords, gold function names, teal types, green strings and violet numbers.">
-</picture>
+<a href="assets/code.svg?raw=true">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/code.svg">
+    <img src="assets/code-light.svg" width="100%" alt="A TypeScript snippet in Cortado's code colors: orange keywords, gold function names, teal types, green strings and violet numbers.">
+  </picture>
+</a>
 
-Code keeps its warmth in two places, orange keywords and gold function names. Types, strings and numbers are teal, green and violet in diffs and file previews (in chat, numbers take the type color), so they never compete with the accent. Every color with a hue was tuned in OKLCH to sit in one band of lightness and saturation per mode.
+Code keeps its warmth in orange keywords and gold function names. Types, strings and numbers are teal, green and violet in diffs and file previews; in chat, numbers take the type color.
 
 ## Contrast
 
-`npm run check` reads every color from the stylesheet and tests 26 pairs in each mode against minimum contrast floors, most of them from WCAG. It fails if any pair falls short, or if the fixed palettes are out of date.
+<a href="assets/contrast.svg?raw=true"><img src="assets/contrast.svg" width="100%" alt="Contrast scorecard for dark and light: body text 15.53 and 17.20, secondary text 7.25 and 7.30, accent 11.27 and 4.76, warnings 9.65 and 5.09, errors 7.97 and 5.70, input borders 3.03 and 3.39, code comments 4.04 and 4.34. Each bar passes its floor."></a>
 
-| Pair | Dark | Light | Floor |
-| :-- | --: | --: | --: |
-| Body text on the chat | 15.53:1 | 17.20:1 | 4.5:1 |
-| Secondary text on the chat | 7.25:1 | 7.30:1 | 4.5:1 |
-| Accent on the chat | 11.27:1 | 4.76:1 | 4.5:1 |
-| Warnings on the chat | 9.65:1 | 5.09:1 | 4.5:1 |
-| Errors on the chat | 7.97:1 | 5.70:1 | 4.5:1 |
-| Code comments on code panels | 4.04:1 | 4.34:1 | 3:1 |
-| Input borders on the chat | 3.03:1 | 3.39:1 | 3:1 |
+`npm run check` reads every color from the stylesheet and tests 26 pairs in each mode against minimum contrast floors, most of them from WCAG. The marks show each floor; the bars run on a log scale to 21:1.
 
-## How it works
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg">
+    <img src="assets/divider-light.svg" width="100%" alt="">
+  </picture>
+</p>
 
-```mermaid
-flowchart LR
-  css["themes/cortado.css<br/>light and dark palettes"] --> build["npm run build"]
-  build --> fixed["cortado-dark.css<br/>cortado-light.css"]
-  code["cortado-code.json<br/>cortado-code-light.json"] --> bb["bb: Settings → Appearance<br/>and bb theme set"]
-  css --> bb
-  fixed --> bb
-  css --> check["npm run check<br/>52 contrast pairs"]
-  css --> images["npm run images<br/>README art"]
-```
-
-The stylesheet sets bb's own theme tokens and nothing else. It never targets bb's components, so there are no selectors to break when bb changes its markup.
+## Reference
 
 <details>
-<summary><b>Every surface, and where bb uses it</b></summary>
+<summary><b>Every surface, and where bb uses it</b> (17 tokens)</summary>
 <br>
 
 | Where in bb | Token | Dark | Light |
@@ -188,7 +244,7 @@ The stylesheet sets bb's own theme tokens and nothing else. It never targets bb'
 </details>
 
 <details>
-<summary><b>Syntax colors in chat</b></summary>
+<summary><b>Syntax colors in chat</b> (7 properties)</summary>
 <br>
 
 bb highlights code blocks in chat with [sugar-high](https://github.com/huozhi/sugar-high), which reads its colors from `--sh-*` properties. Diffs and file previews use the code theme files instead, which set numbers in violet.
@@ -206,7 +262,7 @@ bb highlights code blocks in chat with [sugar-high](https://github.com/huozhi/su
 </details>
 
 <details>
-<summary><b>Terminal colors</b></summary>
+<summary><b>Terminal colors</b> (16 colors)</summary>
 <br>
 
 | # | Color | Dark | Light |
@@ -231,6 +287,25 @@ bb highlights code blocks in chat with [sugar-high](https://github.com/huozhi/su
 </details>
 
 <details>
+<summary><b>How it works</b></summary>
+<br>
+
+```mermaid
+flowchart LR
+  css["themes/cortado.css<br/>light and dark palettes"] --> build["npm run build"]
+  build --> fixed["cortado-dark.css<br/>cortado-light.css"]
+  code["cortado-code.json<br/>cortado-code-light.json"] --> bb["bb: Settings → Appearance<br/>and bb theme set"]
+  css --> bb
+  fixed --> bb
+  css --> check["npm run check<br/>52 contrast pairs"]
+  css --> images["npm run images<br/>README art"]
+```
+
+The stylesheet sets bb's own theme tokens and nothing else. It never targets bb's components, so there are no selectors to break when bb changes its markup.
+
+</details>
+
+<details>
 <summary><b>Change it</b></summary>
 <br>
 
@@ -247,7 +322,7 @@ Edit `themes/cortado.css` for the app and `themes/cortado-code.json` or `themes/
 ```sh
 npm run build    # regenerate Cortado Dark and Cortado Light from cortado.css
 npm run check    # contrast in both modes, and stale files
-npm run images   # redraw the logo, palette and code images
+npm run images   # redraw the logo, wordmark, cards, palette and contrast art
 bb theme set plugin:cortado:cortado
 ```
 
@@ -262,7 +337,9 @@ scripts/check-contrast.mjs     the contrast check behind npm run check
 scripts/render-images.mjs      draws the README art from the theme
 docs/overview.md               the bb marketplace description
 server.ts                      the empty server entry bb requires
-assets/                        logo, glyph and README images
+assets/                        logo, glyph and drawn README art
+assets/screens/                README screenshots
+assets/full/                   the same screenshots at full size
 ```
 
 </details>
@@ -271,18 +348,26 @@ assets/                        logo, glyph and README images
 <summary><b>About the images</b></summary>
 <br>
 
-The screenshots are captured from bb itself, running headless with its own empty data folder and Cortado 1.0.0 installed. The threads show an invented change to a sample file. Nothing comes from anyone's real bb.
+The screenshots are captured from bb 0.49 itself, running headless with its own empty data folder and Cortado 1.0.0 installed from the release tag. The threads show an invented change to a sample file. Nothing comes from anyone's real bb. Desktop shots are taken at 2x and phone shots at 3x; the files under `assets/full/` keep that full resolution.
 
-The logo, palette and code images are drawn by `npm run images`, which reads every color from `themes/cortado.css` and the code theme files. Regenerating after a palette change keeps them honest.
+The wordmark, palette cards, color, code and contrast images are drawn by `npm run images`, which reads every color from `themes/cortado.css` and the code theme files. Regenerating after a palette change keeps them honest.
 
 </details>
 
-## Credits
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg">
+    <img src="assets/divider-light.svg" width="100%" alt="">
+  </picture>
+</p>
 
-Fills and lines follow the step roles of [Radix Colors](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale). Type is [Inter](https://rsms.me/inter/) by Rasmus Andersson and [Fira Code](https://github.com/tonsky/FiraCode) by Nikita Prokopov. MIT licensed.
-
----
-
-## More bb plugins
-
-<p align="center">See every bb plugin I publish at <a href="https://github.com/vburojevic/bb-plugins"><b>vburojevic/bb-plugins</b></a>.</p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
+    <img src="assets/logo-light.svg" width="56" alt="">
+  </picture>
+  <br>
+  <sub>Fills and lines follow the step roles of <a href="https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale">Radix Colors</a>. Type is <a href="https://rsms.me/inter/">Inter</a> by Rasmus Andersson and <a href="https://github.com/tonsky/FiraCode">Fira Code</a> by Nikita Prokopov. <a href="LICENSE">MIT licensed</a>.</sub>
+  <br><br>
+  More bb plugins at <a href="https://github.com/vburojevic/bb-plugins"><b>vburojevic/bb-plugins</b></a>
+</p>
