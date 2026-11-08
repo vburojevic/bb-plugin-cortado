@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
-    <img src="assets/logo-light.svg" width="112" alt="The Cortado logo: a cup seen from above, its surface split by one curve into amber crema and steamed milk.">
+    <img src="assets/logo-light.svg" width="112" alt="The Cortado logo: a cup and handle seen from above, its surface split by one S-curve into amber crema and steamed milk.">
   </picture>
 </p>
 

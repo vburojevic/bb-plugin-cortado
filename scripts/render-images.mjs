@@ -43,61 +43,36 @@ function text(font, str, x, y, size, { track = 0, align = "start", fill = "#000"
   glyphs.forEach((g, i) => { d += g.getPath(cx, y, size).toPathData(1); cx += g.advanceWidth * scale + track * size; if (i < glyphs.length - 1) cx += font.getKerningValue(g, glyphs[i + 1]) * scale; });
   return { svg: `<path d="${d}" fill="${fill}"/>`, width: w };
 }
-function spiral(phase, turns, r0, r1) {
-  const pts = [];
-  for (let i = 0; i <= 120; i++) { const t = i / 120, th = phase + t * turns * 2 * Math.PI, r = r0 * Math.pow(r1 / r0, t); pts.push([r * Math.cos(th), r * Math.sin(th)]); }
-  return "M" + pts.map((p) => p.map((v) => v.toFixed(1)).join(" ")).join("L");
-}
 const arc = (r, a0, a1) => { const p = (a) => [r * Math.cos((a * Math.PI) / 180), r * Math.sin((a * Math.PI) / 180)].map((v) => v.toFixed(1)).join(" "); return `M${p(a0)}A${r} ${r} 0 0 1 ${p(a1)}`; };
 
-// The mark: a cortado seen from above, split by one curve into crema and steamed milk: dark and light in one cup.
-function cup(id, mode, { animate = false } = {}) {
+// The mark: a cortado seen from above. A flat cup and handle, its surface split by
+// one S-curve into amber crema and steamed milk: dark and light in one cup.
+function mark(mode) {
   const L = mode === "light";
-  const saucer = L ? ["#ffffff", "#ececee"] : ["#18181b", "#0e0e10"], saucerLine = L ? "#d9d9dc" : "#2c2c2f";
-  const cupFill = L ? ["#ffffff", "#e9e9eb"] : ["#2a2a2e", "#141416"], cupLine = L ? "#cfcfd3" : "#38383c";
-  return `
-  <defs>
-    <radialGradient id="${id}-s" cx="45%" cy="40%" r="65%"><stop offset="0" stop-color="${saucer[0]}"/><stop offset="1" stop-color="${saucer[1]}"/></radialGradient>
-    <linearGradient id="${id}-c" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${cupFill[0]}"/><stop offset="1" stop-color="${cupFill[1]}"/></linearGradient>
-    <radialGradient id="${id}-k" cx="42%" cy="38%" r="70%"><stop offset="0" stop-color="#ffd27a"/><stop offset=".45" stop-color="#ffb334"/><stop offset=".85" stop-color="#f08a2a"/><stop offset="1" stop-color="#b65a18"/></radialGradient>
-    <radialGradient id="${id}-m" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#fffaf1"/><stop offset=".7" stop-color="#f6e7cf"/><stop offset="1" stop-color="#e8c79a"/></radialGradient>
-    <clipPath id="${id}-clip"><circle r="116"/></clipPath>
-    <filter id="${id}-b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${L ? 10 : 9}"/></filter>
-    <filter id="${id}-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
-  </defs>
-  <circle r="200" fill="url(#${id}-s)" stroke="${saucerLine}" stroke-width="2"/>
-  <circle r="156" fill="none" stroke="${L ? "#000" : "#fff"}" stroke-opacity=".035" stroke-width="2"/>
-  <circle cx="10" cy="16" r="150" fill="#000" opacity="${L ? 0.16 : 0.55}" filter="url(#${id}-b)"/>
-  <g transform="rotate(38)"><rect x="110" y="-25" width="104" height="50" rx="25" fill="${L ? "#f4f4f5" : "#1d1d21"}" stroke="${cupLine}" stroke-width="2"/></g>
-  <circle r="148" fill="url(#${id}-c)" stroke="${cupLine}" stroke-width="2"/>
-  <path d="${arc(141, 200, 290)}" fill="none" stroke="#fff" stroke-opacity="${L ? 0.9 : 0.09}" stroke-width="4" stroke-linecap="round"/>
-  <circle r="123" fill="#5a300b"/>
-  <circle r="116" fill="url(#${id}-k)"/>
-  <g clip-path="url(#${id}-clip)">
-    <g class="${animate ? "swirl" : ""}">
-      <path d="${spiral(0.4, 1.35, 16, 140)}" fill="none" stroke="#9c4d14" stroke-opacity=".18" stroke-width="10" stroke-linecap="round"/>
-      <g transform="rotate(-32)">
-        <path d="${WAVE_FILL}" fill="url(#${id}-m)"/>
-        <path d="${WAVE_LINE}" fill="none" stroke="#c9742c" stroke-width="9" stroke-linecap="round" opacity=".55" filter="url(#${id}-soft)"/>
-        <path d="${WAVE_LINE}" fill="none" stroke="#e7b77a" stroke-width="2.5" stroke-linecap="round" opacity=".9"/>
-      </g>
-    </g>
-    <ellipse cx="-44" cy="-56" rx="36" ry="16" transform="rotate(-32 -44 -56)" fill="#fff4dc" opacity=".35" filter="url(#${id}-soft)"/>
-  </g>
-  <circle r="116" fill="none" stroke="#000" stroke-opacity=".25" stroke-width="3"/>`;
+  const cup = L ? "#ffffff" : "#2a2a2e", rim = L ? "#d6d6d9" : "#ffffff", rimOp = L ? 1 : 0.10, ring = L ? "#000000" : "#ffffff";
+  const r = 112, split = `M ${-r} 0 A ${r / 2} ${r / 2} 0 0 1 0 0 A ${r / 2} ${r / 2} 0 0 0 ${r} 0 A ${r} ${r} 0 0 0 ${-r} 0 Z`;
+  return `<defs>
+    <linearGradient id="amb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffc85a"/><stop offset=".55" stop-color="#ffb334"/><stop offset="1" stop-color="#f08a24"/></linearGradient>
+    <linearGradient id="milk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffaf2"/><stop offset="1" stop-color="#efe2cc"/></linearGradient>
+    <clipPath id="surface"><circle r="${r}"/></clipPath></defs>
+  <g transform="translate(232 256)">
+    <circle r="196" fill="none" stroke="${ring}" stroke-opacity="${L ? 0.06 : 0.07}" stroke-width="3"/>
+    <rect x="132" y="-22" width="84" height="44" rx="22" fill="${cup}" stroke="${rim}" stroke-opacity="${rimOp}" stroke-width="2"/>
+    <circle r="148" fill="${cup}" stroke="${rim}" stroke-opacity="${rimOp}" stroke-width="2"/>
+    <circle r="${r + 8}" fill="#3a1f08"/>
+    <g clip-path="url(#surface)" transform="rotate(-35)"><circle r="${r}" fill="url(#amb)"/><path d="${split}" fill="url(#milk)"/></g>
+  </g>`;
 }
-const WAVE_LINE = "M-130 18 C -70 -62 -20 78 40 6 C 70 -30 100 -26 130 -14";
-const WAVE_FILL = WAVE_LINE + " L 130 -140 L -130 -140 Z";
 
 for (const mode of ["dark", "light"]) {
   const M = MODE[mode], L = mode === "light", sfx = L ? "-light" : "";
   // app icon
-  const bg = L ? ["#ffffff", "#ececee"] : ["#141416", "#060606"];
+  const bg = L ? ["#ffffff", "#f0f0f1"] : ["#1a1a1c", "#0a0a0b"];
   fs.writeFileSync(`${OUT}/logo${sfx}.svg`, `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${bg[0]}"/><stop offset="1" stop-color="${bg[1]}"/></linearGradient></defs>
   <rect width="512" height="512" rx="114" fill="url(#bg)"/>
   <rect x="1" y="1" width="510" height="510" rx="113" fill="none" stroke="${L ? "#000" : "#fff"}" stroke-opacity="${L ? 0.08 : 0.07}" stroke-width="2"/>
-  <g transform="translate(250 252) scale(.98)">${cup("i", mode)}</g>
+  ${mark(mode)}
 </svg>`);
 
   // palette
