@@ -15,9 +15,14 @@
 <a href="#three-palettes"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/palettes-3-ffb334?style=flat-square&labelColor=1c1c1e"><img src="https://img.shields.io/badge/palettes-3-a86200?style=flat-square&labelColor=e8e8ea" alt="Three palettes"></picture></a>
 </p>
 
-<a href="assets/full/hero.png?raw=true"><img src="assets/screens/hero.png" width="100%" alt="One bb thread in Cortado, split along a diagonal: Cortado Dark on the left, Cortado Light on the right, with a thin amber seam. The chat shows a reply with a list, a table and a TypeScript block."></a>
+<a href="assets/full/hero.png?raw=true">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/screens/hero.png">
+    <img src="assets/hero.svg" width="100%" alt="One bb thread in Cortado. An amber seam sweeps across the window, turning Cortado Dark into Cortado Light and back. The chat shows a reply with a list, a table and a TypeScript block.">
+  </picture>
+</a>
 
-<p align="center"><sub>One bb window, Cortado Dark on the left and Cortado Light on the right. <a href="assets/full/hero.png?raw=true">Open full size</a></sub></p>
+<p align="center"><sub>Cortado follows bb's mode: one window, sweeping between Cortado Dark and Cortado Light. Full size: <a href="assets/full/thread-dark.png?raw=true">dark</a> · <a href="assets/full/thread-light.png?raw=true">light</a> · <a href="assets/full/hero.png?raw=true">split</a></sub></p>
 
 <p align="center">
   <picture>
@@ -272,6 +277,7 @@ themes/cortado-code-light.json code theme for diffs and file previews, light
 scripts/build-variants.mjs     writes the two fixed palettes
 scripts/check-contrast.mjs     the contrast check behind npm run check
 scripts/render-images.mjs      draws the README art from the theme
+scripts/render-hero.mjs        builds the animated hero from the two thread screenshots
 docs/overview.md               the bb marketplace description
 server.ts                      the empty server entry bb requires
 assets/                        logo, glyph and drawn README art
@@ -287,7 +293,7 @@ assets/full/                   the same screenshots at full size
 
 The screenshots are captured from bb 0.49 itself, running headless with its own empty data folder and Cortado 1.0.0 installed from the release tag. The threads show an invented change to a sample file. Nothing comes from anyone's real bb. Desktop shots are taken at 2x and phone shots at 3x; the files under `assets/full/` keep that full resolution.
 
-The wordmark, palette cards, color, code and contrast images are drawn by `npm run images`, which reads every color from `themes/cortado.css` and the code theme files. Regenerating after a palette change keeps them honest.
+The wordmark, palette cards, color, code and contrast images are drawn by `npm run images`, which reads every color from `themes/cortado.css` and the code theme files. Regenerating after a palette change keeps them honest. The animated hero, `assets/hero.svg`, is built by the same command from the two full-size thread screenshots; readers who prefer reduced motion get the still `hero.png` instead.
 
 </details>
 

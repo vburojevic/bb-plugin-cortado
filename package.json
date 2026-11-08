@@ -25,7 +25,7 @@
     "build": "node scripts/build-variants.mjs",
     "check": "node scripts/check-contrast.mjs",
     "typecheck": "tsc --noEmit",
-    "images": "npm install --no-save opentype.js@1 @fontsource/inter@5 @fontsource/fira-code@5 && node scripts/render-images.mjs"
+    "images": "npm install --no-save opentype.js@1 @fontsource/inter@5 @fontsource/fira-code@5 && node scripts/render-images.mjs && node scripts/render-hero.mjs"
   },
   "bb": {
     "name": "Cortado",
