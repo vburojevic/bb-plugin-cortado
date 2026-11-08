@@ -1,0 +1,75 @@
+{
+  "name": "bb-plugin-cortado",
+  "version": "1.0.0",
+  "description": "Cortado: a bb theme in neutral graphite with warm orange and amber, in light and dark.",
+  "license": "MIT",
+  "author": "Vedran Burojević (https://github.com/vburojevic)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vburojevic/bb-plugin-cortado.git"
+  },
+  "homepage": "https://github.com/vburojevic/bb-plugin-cortado#readme",
+  "keywords": [
+    "bb",
+    "bb-plugin",
+    "theme",
+    "dark-theme",
+    "light-theme"
+  ],
+  "type": "module",
+  "engines": {
+    "bb": ">=0.48",
+    "bbPluginSdk": ">=0.6.104"
+  },
+  "scripts": {
+    "build": "node scripts/build-variants.mjs",
+    "check": "node scripts/check-contrast.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "bb": {
+    "name": "Cortado",
+    "description": "Neutral graphite with warm orange and amber, in light and dark. Inter and Fira Code.",
+    "branding": {
+      "icon": "./assets/icon.svg"
+    },
+    "server": "./server.ts",
+    "skills": [],
+    "themes": [
+      {
+        "id": "cortado",
+        "name": "Cortado",
+        "description": "Follows bb's light or dark mode",
+        "css": "./themes/cortado.css",
+        "codeTheme": {
+          "dark": "./themes/cortado-code.json",
+          "light": "./themes/cortado-code-light.json"
+        }
+      },
+      {
+        "id": "cortado-dark",
+        "name": "Cortado Dark",
+        "description": "The dark palette in both modes",
+        "css": "./themes/cortado-dark.css",
+        "codeTheme": {
+          "dark": "./themes/cortado-code.json",
+          "light": "./themes/cortado-code.json"
+        }
+      },
+      {
+        "id": "cortado-light",
+        "name": "Cortado Light",
+        "description": "The light palette in both modes",
+        "css": "./themes/cortado-light.css",
+        "codeTheme": {
+          "dark": "./themes/cortado-code-light.json",
+          "light": "./themes/cortado-code-light.json"
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.104",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

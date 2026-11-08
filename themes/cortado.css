@@ -1,0 +1,235 @@
+/* Cortado: neutral graphite with warm orange and amber accents. Surfaces
+   carry no hue and text is plain gray; the warmth lives in the accent, the
+   tangerine warnings and the code, where orange keywords and gold function
+   names sit beside teal types, green strings and violet numbers.
+   Dark mode raises the sidebar and side panels one step above the chat, as
+   macOS does; light mode sets them one step grayer than the white chat.
+   Fills and lines follow Radix Colors' step roles. Light mode uses a deeper
+   amber so it reads as text on white. Run `npm run check` after every change. */
+
+/* shared by both modes */
+:root, .light, .dark {
+  --radius: 0.5rem;
+  --font-sans: "Inter Variable", Inter, -apple-system, system-ui, sans-serif;
+  --font-mono: "Fira Code", "FiraCode Nerd Font", "SF Mono", ui-monospace, Menlo, monospace;
+  --font-terminal: "FiraCode Nerd Font Mono", "Fira Code", "SF Mono", Menlo, monospace;
+}
+
+/* light */
+:root, .light {
+  color-scheme: light;
+  --canvas: #ffffff;
+  --ink: #1b1b1d;
+  --sidebar: #f2f2f3;
+  --sidebar-foreground: #1b1b1d;
+  --sidebar-border: #e8e8ea;
+  --sidebar-accent: color-mix(in srgb, #7c7c82 14%, transparent);
+  --card: #f6f6f7;
+  --popover: #ffffff;
+  --surface-raised: color-mix(in srgb, #1b1b1d 3%, transparent);
+  --surface-raised-solid: #f6f6f7;
+  --surface-recessed: #f2f2f3;
+  --surface-recessed-solid: #f2f2f3;
+  --surface-recessed-soft-solid: #f2f2f3;
+  --secondary: #ebebed;
+  --accent: #e6e6e8;
+  --muted: #efeff1;
+  --border: #e1e1e3;
+  --border-hairline: #e1e1e3;
+  --border-seam: #e8e8ea;
+  --input: #8b8b90;
+  --state-hover: color-mix(in srgb, #7c7c82 14%, transparent);
+  --state-active: color-mix(in srgb, #7c7c82 24%, transparent);
+  --surface-selected: color-mix(in srgb, #7c7c82 20%, transparent);
+  --surface-selected-border: #6b6b70; /* selected cards, your chips, quote bars: a mid-gray outline */
+  --pill-surface: linear-gradient(to bottom, #ffffff, #f4f4f5);
+  --pill-surface-selected: linear-gradient(to bottom, #f4f4f5, #ebebed);
+  --pill-surface-border: #e1e1e3;
+  --pill-surface-selected-border: #d6d6d9;
+  --primary: #a86200;
+  --primary-foreground: #ffffff;
+  --ring: #b87400;
+  --file-accent: #046eb6;
+  --timeline-accent: #a86200;
+  --sidebar-search-match: #ffe3a3;
+  --muted-foreground: #56565b;
+  --readback-foreground: #646469;
+  --subtle-foreground: #717176;
+  --destructive: #d42a52;
+  --destructive-text: #be2e4d;
+  --destructive-foreground: #ffffff;
+  --warning: #bf4712;
+  --warning-text: #bf4712;
+  --attention: #bf4712;
+  --success: #107b49;
+  --success-foreground: #107b49;
+  --diff-added: #107b49;
+  --diff-removed: #be2e4d;
+  --pr-merged: #8b41a9;
+
+  /* terminal: the light code palette */
+  --ansi-0: #3a3a3d;
+  --ansi-bg-fg-0: #ffffff;
+  --ansi-1: #c4262e;
+  --ansi-bg-fg-1: #ffffff;
+  --ansi-2: #17774c;
+  --ansi-bg-fg-2: #ffffff;
+  --ansi-3: #a86200;
+  --ansi-bg-fg-3: #ffffff;
+  --ansi-4: #0a6bbd;
+  --ansi-bg-fg-4: #ffffff;
+  --ansi-5: #6b45d1;
+  --ansi-bg-fg-5: #ffffff;
+  --ansi-6: #0a7a6d;
+  --ansi-bg-fg-6: #ffffff;
+  --ansi-7: #6b6b70;
+  --ansi-bg-fg-7: #ffffff;
+  --ansi-8: #5f5f64;
+  --ansi-bg-fg-8: #ffffff;
+  --ansi-9: #d12b33;
+  --ansi-bg-fg-9: #ffffff;
+  --ansi-10: #1d8a59;
+  --ansi-bg-fg-10: #ffffff;
+  --ansi-11: #b86e00;
+  --ansi-bg-fg-11: #ffffff;
+  --ansi-12: #1f7fd1;
+  --ansi-bg-fg-12: #ffffff;
+  --ansi-13: #7c55e0;
+  --ansi-bg-fg-13: #ffffff;
+  --ansi-14: #0d8f80;
+  --ansi-bg-fg-14: #ffffff;
+  --ansi-15: #1b1b1d;
+  --ansi-bg-fg-15: #ffffff;
+
+  /* shadows: soft and neutral on white */
+  --shadow-color: #0000001a;
+  --shadow-2xs: 0px 1px 0px 0px #0000000a;
+  --shadow-xs: 0px 1px 0px 0px #0000000d;
+  --shadow-sm: 0px 1px 2px 0px #0000000f, 0px 1px 1px -1px #0000000f;
+  --shadow: 0px 1px 2px 0px #0000000f, 0px 1px 1px -1px #0000000f;
+  --shadow-md: 0px 1px 2px 0px #00000010, 0px 2px 6px -1px #00000014;
+  --shadow-lift: 0px -4px 12px -4px #0000001a;
+  --shadow-lg: 0px 1px 2px 0px #00000010, 0 8px 24px -6px #00000024;
+  --shadow-xl: 0px 1px 2px 0px #00000010, 0 8px 24px -6px #00000024;
+  --shadow-2xl: 0px 1px 3px 0px #00000014, 0 16px 40px -8px #0000002e;
+}
+
+/* dark */
+.dark {
+  color-scheme: dark;
+  --canvas: #070707;
+  --ink: #e2e2e0;
+  --sidebar: #0f0f10;
+  --sidebar-foreground: #e2e2e0;
+  --sidebar-border: #202022;
+  --sidebar-accent: color-mix(in srgb, #5a5a5e 24%, transparent);
+  --card: #0f0f10;
+  --popover: #1c1c1e;
+  --surface-raised: color-mix(in srgb, #e2e2e0 3%, transparent);
+  --surface-raised-solid: #0f0f10;
+  --surface-recessed: #0f0f10;
+  --surface-recessed-solid: #0f0f10;
+  --surface-recessed-soft-solid: #0f0f10;
+  --secondary: #252527;
+  --accent: #2b2b2e;
+  --muted: #19191b;
+  --border: #313134;
+  --border-hairline: #313134;
+  --border-seam: #202022;
+  --input: #5c5c60;
+  --state-hover: color-mix(in srgb, #5a5a5e 24%, transparent);
+  --state-active: color-mix(in srgb, #5a5a5e 52%, transparent);
+  --surface-selected: color-mix(in srgb, #5a5a5e 46%, transparent);
+  --surface-selected-border: #85858a; /* selected cards, your chips, quote bars: a light gray outline, like checked radios and tabs */
+  --pill-surface: linear-gradient(to bottom, #202022, #19191b);
+  --pill-surface-selected: linear-gradient(to bottom, #28282b, #202022);
+  --pill-surface-border: #2c2c2f;
+  --pill-surface-selected-border: #2c2c2f;
+  --primary: #ffb334;
+  --primary-foreground: #221200;
+  --ring: #ffb334;
+  --file-accent: #7dc9fc;
+  --timeline-accent: #ffb334;
+  --sidebar-search-match: #321e00;
+  --muted-foreground: #9b9b9b;
+  --readback-foreground: #8a8a8a;
+  --subtle-foreground: #7a7a7a;
+  --destructive: #e5484d;
+  --destructive-text: #fd7a86;
+  --destructive-foreground: #070707;
+  --warning: #ff9b50;
+  --warning-text: #ff9b50;
+  --attention: #ff9b50;
+  --success: #71db9a;
+  --success-foreground: #71db9a;
+  --diff-added: #71db9a;
+  --diff-removed: #fd7a86;
+  --pr-merged: #dda6ee;
+
+  /* terminal: the code palette, one step dimmer for the normal colors */
+  --ansi-0: #3a3a3d;
+  --ansi-bg-fg-0: #e2e2e0;
+  --ansi-1: #f05f5f;
+  --ansi-bg-fg-1: #070707;
+  --ansi-2: #5fcf8c;
+  --ansi-bg-fg-2: #070707;
+  --ansi-3: #f0b04a;
+  --ansi-bg-fg-3: #070707;
+  --ansi-4: #6db8f0;
+  --ansi-bg-fg-4: #070707;
+  --ansi-5: #a99cf5;
+  --ansi-bg-fg-5: #070707;
+  --ansi-6: #52cdbd;
+  --ansi-bg-fg-6: #070707;
+  --ansi-7: #d0d0ce;
+  --ansi-bg-fg-7: #070707;
+  --ansi-8: #737373;
+  --ansi-bg-fg-8: #e2e2e0;
+  --ansi-9: #ff7b7b;
+  --ansi-bg-fg-9: #070707;
+  --ansi-10: #7fe3a8;
+  --ansi-bg-fg-10: #070707;
+  --ansi-11: #ffc861;
+  --ansi-bg-fg-11: #070707;
+  --ansi-12: #8cd2ff;
+  --ansi-bg-fg-12: #070707;
+  --ansi-13: #c3b1ff;
+  --ansi-bg-fg-13: #070707;
+  --ansi-14: #6fe3d3;
+  --ansi-bg-fg-14: #070707;
+  --ansi-15: #f2f2f0;
+  --ansi-bg-fg-15: #070707;
+
+  /* shadows: bb's dark values in both modes */
+  --shadow-color: #0006;
+  --shadow-2xs: 0px 2px 0px 0px #0003;
+  --shadow-xs: 0px 2px 0px 0px #0003;
+  --shadow-sm: 0px 2px 0px 0px #0000004d, 0px 1px 2px -1px #0006;
+  --shadow: 0px 2px 0px 0px #0000004d, 0px 1px 2px -1px #0006;
+  --shadow-md: inset 0 1px 0 0 #ffffff0a, 0px 2px 0px 0px #0000004d, 0px 2px 4px -1px #00000080;
+  --shadow-lift: 0px -4px 12px -4px #00000042;
+  --shadow-lg: inset 0 1px 0 0 #ffffff0d, 0 8px 24px -4px #000000b3;
+  --shadow-xl: inset 0 1px 0 0 #ffffff0d, 0 8px 24px -4px #000000b3;
+  --shadow-2xl: inset 0 1px 0 0 #ffffff12, 0 16px 40px -8px #000000cc;
+}
+
+.bb-code-highlight.bb-code-highlight,
+.light .bb-code-highlight.bb-code-highlight {
+  --sh-keyword: #b84703;
+  --sh-string: #487817;
+  --sh-comment: #717176;
+  --sh-class: #0c796e;
+  --sh-entity: #8b6500;
+  --sh-property: #4b5563;
+  --sh-jsxliterals: #5951c1;
+}
+
+.dark .bb-code-highlight.bb-code-highlight {
+  --sh-keyword: #fd9260;
+  --sh-string: #a6d77d;
+  --sh-comment: #737373;
+  --sh-class: #55dcc8;
+  --sh-entity: #f0cb6e;
+  --sh-property: #b9c6d9;
+  --sh-jsxliterals: #b0b2fd;
+}

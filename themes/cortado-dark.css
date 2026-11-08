@@ -1,0 +1,117 @@
+/* Cortado Dark: the dark palette of Cortado in both of bb's modes.
+   Generated from themes/cortado.css by scripts/build-variants.mjs. Do not edit. */
+
+:root, .light, .dark {
+  --radius: 0.5rem;
+  --font-sans: "Inter Variable", Inter, -apple-system, system-ui, sans-serif;
+  --font-mono: "Fira Code", "FiraCode Nerd Font", "SF Mono", ui-monospace, Menlo, monospace;
+  --font-terminal: "FiraCode Nerd Font Mono", "Fira Code", "SF Mono", Menlo, monospace;
+
+  color-scheme: dark;
+  --canvas: #070707;
+  --ink: #e2e2e0;
+  --sidebar: #0f0f10;
+  --sidebar-foreground: #e2e2e0;
+  --sidebar-border: #202022;
+  --sidebar-accent: color-mix(in srgb, #5a5a5e 24%, transparent);
+  --card: #0f0f10;
+  --popover: #1c1c1e;
+  --surface-raised: color-mix(in srgb, #e2e2e0 3%, transparent);
+  --surface-raised-solid: #0f0f10;
+  --surface-recessed: #0f0f10;
+  --surface-recessed-solid: #0f0f10;
+  --surface-recessed-soft-solid: #0f0f10;
+  --secondary: #252527;
+  --accent: #2b2b2e;
+  --muted: #19191b;
+  --border: #313134;
+  --border-hairline: #313134;
+  --border-seam: #202022;
+  --input: #5c5c60;
+  --state-hover: color-mix(in srgb, #5a5a5e 24%, transparent);
+  --state-active: color-mix(in srgb, #5a5a5e 52%, transparent);
+  --surface-selected: color-mix(in srgb, #5a5a5e 46%, transparent);
+  --surface-selected-border: #85858a; /* selected cards, your chips, quote bars: a light gray outline, like checked radios and tabs */
+  --pill-surface: linear-gradient(to bottom, #202022, #19191b);
+  --pill-surface-selected: linear-gradient(to bottom, #28282b, #202022);
+  --pill-surface-border: #2c2c2f;
+  --pill-surface-selected-border: #2c2c2f;
+  --primary: #ffb334;
+  --primary-foreground: #221200;
+  --ring: #ffb334;
+  --file-accent: #7dc9fc;
+  --timeline-accent: #ffb334;
+  --sidebar-search-match: #321e00;
+  --muted-foreground: #9b9b9b;
+  --readback-foreground: #8a8a8a;
+  --subtle-foreground: #7a7a7a;
+  --destructive: #e5484d;
+  --destructive-text: #fd7a86;
+  --destructive-foreground: #070707;
+  --warning: #ff9b50;
+  --warning-text: #ff9b50;
+  --attention: #ff9b50;
+  --success: #71db9a;
+  --success-foreground: #71db9a;
+  --diff-added: #71db9a;
+  --diff-removed: #fd7a86;
+  --pr-merged: #dda6ee;
+
+  /* terminal: the code palette, one step dimmer for the normal colors */
+  --ansi-0: #3a3a3d;
+  --ansi-bg-fg-0: #e2e2e0;
+  --ansi-1: #f05f5f;
+  --ansi-bg-fg-1: #070707;
+  --ansi-2: #5fcf8c;
+  --ansi-bg-fg-2: #070707;
+  --ansi-3: #f0b04a;
+  --ansi-bg-fg-3: #070707;
+  --ansi-4: #6db8f0;
+  --ansi-bg-fg-4: #070707;
+  --ansi-5: #a99cf5;
+  --ansi-bg-fg-5: #070707;
+  --ansi-6: #52cdbd;
+  --ansi-bg-fg-6: #070707;
+  --ansi-7: #d0d0ce;
+  --ansi-bg-fg-7: #070707;
+  --ansi-8: #737373;
+  --ansi-bg-fg-8: #e2e2e0;
+  --ansi-9: #ff7b7b;
+  --ansi-bg-fg-9: #070707;
+  --ansi-10: #7fe3a8;
+  --ansi-bg-fg-10: #070707;
+  --ansi-11: #ffc861;
+  --ansi-bg-fg-11: #070707;
+  --ansi-12: #8cd2ff;
+  --ansi-bg-fg-12: #070707;
+  --ansi-13: #c3b1ff;
+  --ansi-bg-fg-13: #070707;
+  --ansi-14: #6fe3d3;
+  --ansi-bg-fg-14: #070707;
+  --ansi-15: #f2f2f0;
+  --ansi-bg-fg-15: #070707;
+
+  /* shadows: bb's dark values in both modes */
+  --shadow-color: #0006;
+  --shadow-2xs: 0px 2px 0px 0px #0003;
+  --shadow-xs: 0px 2px 0px 0px #0003;
+  --shadow-sm: 0px 2px 0px 0px #0000004d, 0px 1px 2px -1px #0006;
+  --shadow: 0px 2px 0px 0px #0000004d, 0px 1px 2px -1px #0006;
+  --shadow-md: inset 0 1px 0 0 #ffffff0a, 0px 2px 0px 0px #0000004d, 0px 2px 4px -1px #00000080;
+  --shadow-lift: 0px -4px 12px -4px #00000042;
+  --shadow-lg: inset 0 1px 0 0 #ffffff0d, 0 8px 24px -4px #000000b3;
+  --shadow-xl: inset 0 1px 0 0 #ffffff0d, 0 8px 24px -4px #000000b3;
+  --shadow-2xl: inset 0 1px 0 0 #ffffff12, 0 16px 40px -8px #000000cc;
+}
+
+.bb-code-highlight.bb-code-highlight,
+.light .bb-code-highlight.bb-code-highlight,
+.dark .bb-code-highlight.bb-code-highlight {
+  --sh-keyword: #fd9260;
+  --sh-string: #a6d77d;
+  --sh-comment: #737373;
+  --sh-class: #55dcc8;
+  --sh-entity: #f0cb6e;
+  --sh-property: #b9c6d9;
+  --sh-jsxliterals: #b0b2fd;
+}
