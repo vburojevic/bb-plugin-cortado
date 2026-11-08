@@ -50,22 +50,13 @@ bb plugin install git:github.com/vburojevic/bb-plugin-cortado@v1.0.0 --yes
 
 ## Three palettes
 
-<table>
-<tr>
-<td width="33%" align="center" valign="top">
-<a href="assets/full/hero.png?raw=true"><img src="assets/card-cortado.svg" width="100%" alt="Cortado: the palette's name, a code sample and its swatches."></a>
-<br><code>cortado</code>
-</td>
-<td width="33%" align="center" valign="top">
-<a href="assets/full/thread-dark.png?raw=true"><img src="assets/card-dark.svg" width="100%" alt="Cortado Dark: the palette's name, a code sample and its swatches."></a>
-<br><code>cortado-dark</code>
-</td>
-<td width="33%" align="center" valign="top">
-<a href="assets/full/thread-light.png?raw=true"><img src="assets/card-light.svg" width="100%" alt="Cortado Light: the palette's name, a code sample and its swatches."></a>
-<br><code>cortado-light</code>
-</td>
-</tr>
-</table>
+<p align="center">
+<a href="assets/full/hero.png?raw=true"><img src="assets/card-cortado.svg" width="272" alt="Cortado: the palette's name, a code sample and its swatches."></a>
+<a href="assets/full/thread-dark.png?raw=true"><img src="assets/card-dark.svg" width="272" alt="Cortado Dark: the palette's name, a code sample and its swatches."></a>
+<a href="assets/full/thread-light.png?raw=true"><img src="assets/card-light.svg" width="272" alt="Cortado Light: the palette's name, a code sample and its swatches."></a>
+</p>
+
+<p align="center"><code>cortado</code> · <code>cortado-dark</code> · <code>cortado-light</code></p>
 
 **Cortado** follows bb's Light, Dark or System setting. **Cortado Dark** and **Cortado Light** keep one palette whichever way that switch is set. Each recolors the app, the syntax colors in chat, diffs and file previews, and the 16 terminal colors.
 
@@ -88,48 +79,28 @@ bb theme set plugin:cortado:cortado-light   # always light
 
 bb draws diffs, file previews and the file editor with a code theme of its own. Cortado brings one for each mode, drawn from the same palette as code in chat.
 
-<a href="assets/full/diff-dark.png?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/diff-dark.png">
-    <img src="assets/screens/diff-light.png" width="100%" alt="bb's diff panel beside a thread: README.md with one line changed and src/greet.ts with five added lines.">
-  </picture>
-</a>
+<a href="assets/full/diff-dark.png?raw=true#gh-dark-mode-only"><img src="assets/screens/diff-dark.png#gh-dark-mode-only" width="100%" alt="bb's diff panel beside a thread: README.md with one line changed and src/greet.ts with five added lines."></a><a href="assets/full/diff-light.png?raw=true#gh-light-mode-only"><img src="assets/screens/diff-light.png#gh-light-mode-only" width="100%" alt="bb's diff panel beside a thread: README.md with one line changed and src/greet.ts with five added lines."></a>
 <p align="center"><sub>Full size: <a href="assets/full/diff-dark.png?raw=true">dark</a> · <a href="assets/full/diff-light.png?raw=true">light</a></sub></p>
 
 ### Right in Settings
 
 All three palettes appear under **Settings → Appearance → Palette**, next to bb's built-in ones.
 
-<a href="assets/full/palettes-dark.png?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/palettes-dark.png">
-    <img src="assets/screens/palettes-light.png" width="100%" alt="bb's Settings, Appearance page, with the Palette menu open on Cortado, Cortado Dark and Cortado Light.">
-  </picture>
-</a>
+<a href="assets/full/palettes-dark.png?raw=true#gh-dark-mode-only"><img src="assets/screens/palettes-dark.png#gh-dark-mode-only" width="100%" alt="bb's Settings, Appearance page, with the Palette menu open on Cortado, Cortado Dark and Cortado Light."></a><a href="assets/full/palettes-light.png?raw=true#gh-light-mode-only"><img src="assets/screens/palettes-light.png#gh-light-mode-only" width="100%" alt="bb's Settings, Appearance page, with the Palette menu open on Cortado, Cortado Dark and Cortado Light."></a>
 <p align="center"><sub>Full size: <a href="assets/full/palettes-dark.png?raw=true">dark</a> · <a href="assets/full/palettes-light.png?raw=true">light</a></sub></p>
 
 ### Warm where it counts
 
-The amber accent marks what matters: search matches, the unread line and primary buttons.
+Amber marks what matters: search matches, the unread line and primary buttons.
 
-<a href="assets/full/search-dark.png?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/search-dark.png">
-    <img src="assets/screens/search-light.png" width="100%" alt="Thread search for greet with three results; the matched word is highlighted in amber.">
-  </picture>
-</a>
+<a href="assets/full/search-dark.png?raw=true#gh-dark-mode-only"><img src="assets/screens/search-dark.png#gh-dark-mode-only" width="100%" alt="Thread search for greet with three results; the matched word is highlighted in amber."></a><a href="assets/full/search-light.png?raw=true#gh-light-mode-only"><img src="assets/screens/search-light.png#gh-light-mode-only" width="100%" alt="Thread search for greet with three results; the matched word is highlighted in amber."></a>
 <p align="center"><sub>Full size: <a href="assets/full/search-dark.png?raw=true">dark</a> · <a href="assets/full/search-light.png?raw=true">light</a></sub></p>
 
 ### Depth you can read
 
 Menus sit one step above the sidebar and the sidebar one step above the chat, so every layer separates without heavy borders.
 
-<a href="assets/full/menu-dark.png?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/menu-dark.png">
-    <img src="assets/screens/menu-light.png" width="100%" alt="The navigation menu open over the sidebar, beside a thread.">
-  </picture>
-</a>
+<a href="assets/full/menu-dark.png?raw=true#gh-dark-mode-only"><img src="assets/screens/menu-dark.png#gh-dark-mode-only" width="100%" alt="The navigation menu open over the sidebar, beside a thread."></a><a href="assets/full/menu-light.png?raw=true#gh-light-mode-only"><img src="assets/screens/menu-light.png#gh-light-mode-only" width="100%" alt="The navigation menu open over the sidebar, beside a thread."></a>
 <p align="center"><sub>Full size: <a href="assets/full/menu-dark.png?raw=true">dark</a> · <a href="assets/full/menu-light.png?raw=true">light</a></sub></p>
 
 <p align="center">
@@ -141,39 +112,15 @@ Menus sit one step above the sidebar and the sidebar one step above the chat, so
 
 ## On your phone
 
-bb's phone layout gets the same palette, in both modes. Tap any phone for the full-size screen.
+bb's phone layout gets the same palette, in both modes. Tap a phone for its full-size screen.
 
-<table>
-<tr>
-<td width="33%" align="center" valign="top">
-<a href="assets/full/thread-phone-dark.png?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/thread-phone-dark.png">
-    <img src="assets/screens/thread-phone-light.png" width="250" alt="A thread on a phone in Cortado.">
-  </picture>
-</a>
-<br><sub><b>A thread</b><br><a href="assets/full/thread-phone-dark.png?raw=true">dark</a> · <a href="assets/full/thread-phone-light.png?raw=true">light</a></sub>
-</td>
-<td width="33%" align="center" valign="top">
-<a href="assets/full/plan-phone-dark.png?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/plan-phone-dark.png">
-    <img src="assets/screens/plan-phone-light.png" width="250" alt="A numbered plan on a phone in Cortado.">
-  </picture>
-</a>
-<br><sub><b>A numbered plan</b><br><a href="assets/full/plan-phone-dark.png?raw=true">dark</a> · <a href="assets/full/plan-phone-light.png?raw=true">light</a></sub>
-</td>
-<td width="33%" align="center" valign="top">
-<a href="assets/full/settings-phone-dark.png?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screens/settings-phone-dark.png">
-    <img src="assets/screens/settings-phone-light.png" width="250" alt="Settings on a phone in Cortado.">
-  </picture>
-</a>
-<br><sub><b>Settings</b><br><a href="assets/full/settings-phone-dark.png?raw=true">dark</a> · <a href="assets/full/settings-phone-light.png?raw=true">light</a></sub>
-</td>
-</tr>
-</table>
+<p align="center">
+<a href="assets/full/thread-phone-dark.png?raw=true#gh-dark-mode-only"><img src="assets/screens/thread-phone-dark.png#gh-dark-mode-only" width="250" alt="A thread on a phone in Cortado."></a><a href="assets/full/thread-phone-light.png?raw=true#gh-light-mode-only"><img src="assets/screens/thread-phone-light.png#gh-light-mode-only" width="250" alt="A thread on a phone in Cortado."></a>
+<a href="assets/full/plan-phone-dark.png?raw=true#gh-dark-mode-only"><img src="assets/screens/plan-phone-dark.png#gh-dark-mode-only" width="250" alt="A numbered plan on a phone in Cortado."></a><a href="assets/full/plan-phone-light.png?raw=true#gh-light-mode-only"><img src="assets/screens/plan-phone-light.png#gh-light-mode-only" width="250" alt="A numbered plan on a phone in Cortado."></a>
+<a href="assets/full/settings-phone-dark.png?raw=true#gh-dark-mode-only"><img src="assets/screens/settings-phone-dark.png#gh-dark-mode-only" width="250" alt="Settings on a phone in Cortado."></a><a href="assets/full/settings-phone-light.png?raw=true#gh-light-mode-only"><img src="assets/screens/settings-phone-light.png#gh-light-mode-only" width="250" alt="Settings on a phone in Cortado."></a>
+</p>
+
+<p align="center"><sub>A thread, a numbered plan and Settings. Full size: Thread <a href="assets/full/thread-phone-dark.png?raw=true">dark</a> / <a href="assets/full/thread-phone-light.png?raw=true">light</a> · Plan <a href="assets/full/plan-phone-dark.png?raw=true">dark</a> / <a href="assets/full/plan-phone-light.png?raw=true">light</a> · Settings <a href="assets/full/settings-phone-dark.png?raw=true">dark</a> / <a href="assets/full/settings-phone-light.png?raw=true">light</a></sub></p>
 
 <p align="center">
   <picture>
@@ -184,21 +131,11 @@ bb's phone layout gets the same palette, in both modes. Tap any phone for the fu
 
 ## Colors
 
-<a href="assets/palette.svg?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/palette.svg">
-    <img src="assets/palette-light.svg" width="100%" alt="Cortado's surfaces, accents and text colors, with their hex values, in the current mode.">
-  </picture>
-</a>
+<a href="assets/palette.svg?raw=true#gh-dark-mode-only"><img src="assets/palette.svg#gh-dark-mode-only" width="100%" alt="Cortado's surfaces, accents and text colors, with their hex values, in the current mode."></a><a href="assets/palette-light.svg?raw=true#gh-light-mode-only"><img src="assets/palette-light.svg#gh-light-mode-only" width="100%" alt="Cortado's surfaces, accents and text colors, with their hex values, in the current mode."></a>
 
 The grays carry no tint, so the warm colors do the work. In dark mode the sidebar and side panels sit one step above the chat; in light mode they sit one step grayer than the white chat.
 
-<a href="assets/code.svg?raw=true">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/code.svg">
-    <img src="assets/code-light.svg" width="100%" alt="A TypeScript snippet in Cortado's code colors: orange keywords, gold function names, teal types, green strings and violet numbers.">
-  </picture>
-</a>
+<a href="assets/code.svg?raw=true#gh-dark-mode-only"><img src="assets/code.svg#gh-dark-mode-only" width="100%" alt="A TypeScript snippet in Cortado's code colors: orange keywords, gold function names, teal types, green strings and violet numbers."></a><a href="assets/code-light.svg?raw=true#gh-light-mode-only"><img src="assets/code-light.svg#gh-light-mode-only" width="100%" alt="A TypeScript snippet in Cortado's code colors: orange keywords, gold function names, teal types, green strings and violet numbers."></a>
 
 Code keeps its warmth in orange keywords and gold function names. Types, strings and numbers are teal, green and violet in diffs and file previews; in chat, numbers take the type color.
 
@@ -218,7 +155,7 @@ Code keeps its warmth in orange keywords and gold function names. Types, strings
 ## Reference
 
 <details>
-<summary><b>Every surface, and where bb uses it</b> (17 tokens)</summary>
+<summary><b>Every surface, and where bb uses it</b> (18 tokens)</summary>
 <br>
 
 | Where in bb | Token | Dark | Light |
